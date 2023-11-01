@@ -24,7 +24,7 @@ namespace student
             }
             else
             {
-                Console.WriteLine(Money)
+                Console.WriteLine(Money);
             }
         }
 
