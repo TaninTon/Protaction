@@ -5,10 +5,11 @@ namespace Exercise_02_P5S3
     internal class GenerateData
     {
         public List<Employee> Employees;
+        public List<GroupAge> GroupAges;
         public GenerateData(int num = 5)
         {
             Employees = new List<Employee>();
-            CreateEmployee(num);
+            GroupAges = new List<GroupAge>();
         }
 
         public void CreateEmployee(int number)
@@ -26,12 +27,32 @@ namespace Exercise_02_P5S3
             }
             
         }
-        public List<Employee> SortBysection()=>Employees.OrderBy(p=>p.Section).ToList();
-
-        public List<IGrouping<int, Employee>> GroupOfSection()
+        public List<Employee> SortByAge()
         {
-           Employees = SortBysection();
-           return Employees.GroupBy(p=>p.Section).ToList();
+            return Employees.OrderBy(p => p.Section).ToList();
+        }
+
+        public List<IGrouping<int,GroupAge>> GroupofAge()
+        {
+           Employees = SortByAge();
+
+            int groupTemp, sectionTemp;
+
+            foreach(var item in Employees)
+            {
+                //Lamda C# v8
+                groupTemp = item.Age switch
+                 {
+                     <= 30 => 1,
+                     <= 40 => 2,
+                     <= 50 => 3,
+                     _ => 40,
+                 };
+
+
+                GroupAges.Add(new GroupAge { GroupofAge = groupTemp, Section = item.Section });
+            }
+            return GroupAges.GroupBy(p => p.GroupofAge).ToList();   
         }
         
     }
