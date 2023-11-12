@@ -1,12 +1,12 @@
 ﻿
-namespace Exercise_02_P5S3
+namespace Exercise02_P55T3
 {
-    public class Employee
+    internal class Employee
     {
         public int Id { get; set; }
         public int Section { get; set; }
         public int Age { get; set; }
     }
-
-
 }
+
+

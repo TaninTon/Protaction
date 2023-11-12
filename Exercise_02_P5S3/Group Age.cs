@@ -1,10 +1,8 @@
-﻿
-
-namespace Exercise_02_P5S3
+﻿namespace Exercise02_P55T3
 {
-    internal class GroupAge
+    public class GroupAge
     {
-        public int GroupofAge { get; set; }
-        public int Section    { get; set; }
+        public int GroupOfAge { get; set; }
+        public int Section { get; set; }
     }
 }
