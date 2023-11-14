@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using P05_Interface.ITast;
 
 namespace P05_Interface.CTest
 {
-    internal class CTest
+    public class ClassTest : InterfaceTest
+
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public ClassTest()
+        {
+            Input();
+        }
+
+        public void Display()
+        {
+            Console.WriteLine($"{Id} {Name}");
+        }
+
+        public void Input()
+        {
+            Id = 1;
+            Name = "test";
+        }
+
+
     }
 }

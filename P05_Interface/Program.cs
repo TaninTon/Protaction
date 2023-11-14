@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using P05_Interface.CTest;
+
+var test = new ClassTest();
+var test1 = new TestData();
+
+test.Display();
+test1.Display(); 
