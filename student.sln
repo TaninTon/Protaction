@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "student", "student\student.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise_02_P5S3", "Exercise_02_P5S3\Exercise_02_P5S3.csproj", "{F7FFBBEF-C14E-4CF6-8154-F0E2926423FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04-polimorphism", "P04-polimorphism\P04-polimorphism.csproj", "{109AAC90-3D88-4ED8-9EE5-18A0CF111989}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04-polimorphism", "P04-polimorphism\P04-polimorphism.csproj", "{109AAC90-3D88-4ED8-9EE5-18A0CF111989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_Interface", "P05_Interface\P05_Interface.csproj", "{F7477101-7A07-4240-B0C3-57E42C5A79F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{109AAC90-3D88-4ED8-9EE5-18A0CF111989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{109AAC90-3D88-4ED8-9EE5-18A0CF111989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{109AAC90-3D88-4ED8-9EE5-18A0CF111989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7477101-7A07-4240-B0C3-57E42C5A79F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7477101-7A07-4240-B0C3-57E42C5A79F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7477101-7A07-4240-B0C3-57E42C5A79F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7477101-7A07-4240-B0C3-57E42C5A79F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
