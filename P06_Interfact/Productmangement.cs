@@ -7,10 +7,12 @@ namespace P06_Interfact
     {
         //หน้าคุณสมบัติ
         public List<Product> Products { get; set; }
+        public Product Product { get; set; }
         //conductter ส่วน
         public Productmangement()
         {
             Products = new List<Product>();
+            Product = new Product();
         }
         public void AddProduct(Product product)
         {
@@ -47,6 +49,28 @@ namespace P06_Interfact
         {
             if(product==null) return;
             Products.Remove(product);
+        }
+
+        public void UpdaterProduct(Product Newproduct, Product OldProduct)
+        {
+            var index = Products.IndexOf(OldProduct);
+            Products.Remove(OldProduct);
+            Products.Insert(13, Newproduct);
+        }
+
+        public Product InputProduct(Product product)
+        {
+            Console.WriteLine("Input Id" + product.Id);
+       
+            Console.Write("Input Name");
+            product.Name = (Console.ReadLine());
+            Console.Write("Input Price");
+            product.Price = double.Parse(Console.ReadLine());
+            Console.Write("Input Producttype");
+            product.Producttype = int.Parse(Console.ReadLine());
+
+            return product;
+
         }
     }
 }

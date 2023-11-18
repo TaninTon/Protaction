@@ -140,6 +140,20 @@ namespace P06_Interfact
             Console.WriteLine();
             DisplayProduct();
         }
+
+        public void UpdateProductService()
+        {
+        UpdateProductService:
+            var result = SearchProduct();
+
+            if (result == null) goto UpdateProductService;
+
+            var newProduct =    Productmangement.InputProduct(result);
+
+            Productmangement.UpdaterProduct(newProduct,result);
+
+            DisplayProduct();
+        }
     }
    
     public class TempGroup

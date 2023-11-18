@@ -11,5 +11,8 @@ namespace P06_Interfact
         Product GetProductById(int productid);
         List <Product> GetProductByAny(int number, string keyword);
         void DeleteById(Product product);
+        void UpdaterProduct(Product Newproduct ,Product OldProduct);
+
+        Product InputProduct(Product product);
     }
 }
