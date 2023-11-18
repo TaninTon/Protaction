@@ -24,7 +24,8 @@ namespace P06_Interfact
                 {
                     Id = i,
                     Name = "Coffee",
-                    Price = random.Next(10, 200)
+                    Price = random.Next(10, 200),
+                    Producttype = random.Next(1,6),
                 });
             }
         }
@@ -46,6 +47,7 @@ namespace P06_Interfact
         {
             var temp = new List<TempGroup>();
             int tempGr;
+            int tempT;
 
             foreach (var item in Productmangement.Products)
             {
@@ -55,23 +57,45 @@ namespace P06_Interfact
                     <= 200 => 2,
                     _ =>3,
                 };
-                temp.Add(new TempGroup { group = tempGr });
+                tempT = item.Producttype;
+                temp.Add(new TempGroup {
+                    group = tempGr, 
+                    group_type  = tempT 
+                });
             }
             return temp;
         }
         public void DisplayGroupByPrice()
         {
-            var numOfGroup = GroupByPrice().GroupBy(p => p.group);
-
-            foreach (var item in numOfGroup)
+            var shotofGroup = GroupByPrice().OrderBy(e => e.group);
+            var numofGroup = shotofGroup.GroupBy(e => e.group);
+            foreach (var item in numofGroup)
             {
-                Console.WriteLine($"{item.Key}{GroupByPrice().Count(p=>p.group == item.Key)}");
+                Console.Write($"{item.Key}");
+                for (var i = 1; i <= 5; i++)
+                {
+                    Console.Write($"{item.Count(e => e.group_type == i), 5}");
+                }
+                Console.WriteLine();
             }
         }
-    }
+        public string NameOfPrice(int Price)
+        {
+            return Price switch
+            {
+                1 => "10-100",
+                2 => "101-200",
+                _ => "  ",
+            };
 
+
+        }
+    }
+   
     public class TempGroup
     {
        public int group { get; set; }
+       public int group_type { get; set; }
     }
+
 }
