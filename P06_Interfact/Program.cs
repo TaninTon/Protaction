@@ -10,5 +10,7 @@ ps.DisplayProduct();
 //ps.DisplayGroupByPrice();
 
 
-ps.SearchProduct();
+//ps.SearchProduct();
+//ps.SearchByAny();
+ps.DeleteProductById();
 

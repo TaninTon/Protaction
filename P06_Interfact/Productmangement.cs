@@ -29,5 +29,24 @@ namespace P06_Interfact
             //Products.FirstOrDefault(p => p.Id == productId);
             return Products.FirstOrDefault(p => p.Id == productid);
         }
+
+        public List<Product> GetProductByAny(int number, string keyword=" ")
+        {
+            if(string.IsNullOrEmpty(keyword)) keyword = "XXX";
+           var result =  Products.Where(p => p.Name.ToUpper().Contains(keyword.ToUpper())||
+            p.Id.Equals(number)||
+            p.Price > number ||
+            p.Producttype.Equals(number)).ToList();
+
+
+
+            return result;
+        }
+
+        public void DeleteById(Product product)
+        {
+            if(product==null) return;
+            Products.Remove(product);
+        }
     }
 }

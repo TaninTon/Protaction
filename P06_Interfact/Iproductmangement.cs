@@ -9,5 +9,7 @@ namespace P06_Interfact
         List<Product> GetProducts();
 
         Product GetProductById(int productid);
+        List <Product> GetProductByAny(int number, string keyword);
+        void DeleteById(Product product);
     }
 }

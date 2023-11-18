@@ -91,15 +91,54 @@ namespace P06_Interfact
 
         }
 
-        public void SearchProduct()
+        public Product SearchProduct()
         {
             Console.Write("Enter Id");
             var id = int.Parse(Console.ReadLine());
 
             var result = Productmangement.GetProductById(id);
-            if (result == null) Console.WriteLine("Not found");
-            else Console.WriteLine($"{result.Id,5}{result.Name,5}{result.Price,5}" +
+            if (result == null)
+            {
+                Console.WriteLine("Not found");
+
+            }
+            else
+            {
+                Console.WriteLine($"{result.Id,5}{result.Name,5}{result.Price,5}" +
                 $"{result.Producttype,5}");
+            }
+          
+                return result;
+            
+        }
+        public void SearchByAny()
+        {
+
+            Console.Write("Enter number");
+            var number = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter keyword");
+            var keyword = int.Parse(Console.ReadLine());
+
+            var result = Productmangement.GetProductByAny(number);
+            if (result.Count == 0 )Console.WriteLine("Not found");
+            else
+            {
+              result.ForEach (x => Console.WriteLine($"{x.Id,5}{x.Name,5}{x.Price,5}" +
+                $"{x.Producttype,5}"));
+            }
+        }
+
+        public void DeleteProductById()
+        {
+            var result = SearchProduct();
+
+            if (result == null) return;
+
+            Productmangement.DeleteById(result);
+
+            Console.WriteLine();
+            DisplayProduct();
         }
     }
    
