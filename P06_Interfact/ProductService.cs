@@ -90,6 +90,17 @@ namespace P06_Interfact
 
 
         }
+
+        public void SearchProduct()
+        {
+            Console.Write("Enter Id");
+            var id = int.Parse(Console.ReadLine());
+
+            var result = Productmangement.GetProductById(id);
+            if (result == null) Console.WriteLine("Not found");
+            else Console.WriteLine($"{result.Id,5}{result.Name,5}{result.Price,5}" +
+                $"{result.Producttype,5}");
+        }
     }
    
     public class TempGroup

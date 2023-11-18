@@ -7,5 +7,7 @@ namespace P06_Interfact
     {
         void AddProduct(Product product);
         List<Product> GetProducts();
+
+        Product GetProductById(int productid);
     }
 }

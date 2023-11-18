@@ -21,5 +21,13 @@ namespace P06_Interfact
         {
             return Products;
         }
+
+       
+        public Product GetProductById(int productid)
+        {
+            //Products.Where(p=>p.Id == productId).FirstOrDefault();
+            //Products.FirstOrDefault(p => p.Id == productId);
+            return Products.FirstOrDefault(p => p.Id == productid);
+        }
     }
 }
