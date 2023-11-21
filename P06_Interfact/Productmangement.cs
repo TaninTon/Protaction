@@ -2,18 +2,18 @@
 
 namespace P06_Interfact 
 {
+    //นำข้อมุลลงไปในแท็คไฟร์ 
     // สืบถ่อดจาก interface เอาไว้เติมใส่ในโค้ด
     public class Productmangement : Iproductmangement
     {
         //หน้าคุณสมบัติ
         public List<Product> Products { get; set; }
-        public Product Product { get; set; }
+
         //conductter ส่วน
         public Productmangement()
         {
             Products = new List<Product>();
-            Product = new Product();
-        }
+        } 
         public void AddProduct(Product product)
         {
             Products.Add(product);
@@ -55,7 +55,7 @@ namespace P06_Interfact
         {
             var index = Products.IndexOf(OldProduct);
             Products.Remove(OldProduct);
-            Products.Insert(13, Newproduct);
+            Products.Insert(0, Newproduct);
         }
 
         public Product InputProduct(Product product)
